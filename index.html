@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>The Showcase</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Welcome<br />
+							to the<br />
+						Showcase</h1>
+						<p>A Data Analyst Portfolio webpage designed by <a href="https://www.linkedin.com/in/anthony-benders-b2736a230/">Anthony Benders </a> to <br />
+						exhibit developer skills in SQL, Tableau, & Python .</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="https://www.linkedin.com/in/anthony-benders-b2736a230/" class="logo">Connect With Anthony</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">The Portfolio</a></li>
+							<li class="active"><a href="abenztech-2.html">Anthony's Experience</a></li>
+						</ul>
+						<ul class="icons">
+							
+							
+							<li><a href="https://www.linkedin.com/in/anthony-benders-b2736a230/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/abenztech" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<a href="images/DataAnalysisResume.pdf" class="Header">About Anthony</span></a>
+									<h2>A Passionate Data Analyst <br />
+									with a knack for Visualization</a></h2>
+								</header>
+								</a>
+								<ul class="actions special">
+									<li><a href="abenztech-2.html" class="button large">Anthony's Experience</a></li>
+								</ul>
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										
+										<h2><a href="https://github.com/abenztech/BikeStoresProject">Cleaning Data<br />
+										using MSSQL</a></h2><br />
+									</header>
+									<div id="sql-code">
+										<pre style="white-space: pre-wrap;word-wrap: break-word;overflow:auto; max-height:200px; margin:0;padding:0;">
+										  SELECT ord.order_id,
+												 CONCAT(cus.first_name, ' ', cus.last_name) AS customers,
+												 cus.city,
+												 cus.state,
+												 ord.order_date,
+												 SUM(ite.quantity) AS total_units,
+												 SUM(ite.quantity * ite.list_price) AS revenue,
+												 pro.product_name,
+												 cat.category_name,
+												 bra.brand_name,
+												 sto.store_name,
+												 CONCAT(sta.first_name, ' ', sta.last_name) AS sales_rep
+										  FROM sales.orders ord
+										  JOIN sales.customers cus ON ord.customer_id = cus.customer_id
+										  JOIN sales.order_items ite ON ord.order_id = ite.order_id
+										  JOIN production.products pro ON ite.product_id = pro.product_id
+										  JOIN production.categories cat ON pro.category_id = cat.category_id
+										  JOIN production.brands bra ON pro.brand_id = bra.brand_id
+										  JOIN sales.stores sto ON ord.store_id = sto.store_id
+										  JOIN sales.staffs sta ON ord.staff_id = sta.staff_id
+										  GROUP BY ord.order_id,
+												 CONCAT(cus.first_name, ' ', cus.last_name),
+												 cus.city,
+												 cus.state,
+												 ord.order_date,
+												 pro.product_name,
+												 cat.category_name,
+												 bra.brand_name,
+												 sto.store_name,
+												 CONCAT(sta.first_name, ' ', sta.last_name)
+										</pre>
+									  </div>
+									  
+									  <script>
+										// Prevent the user from editing the SQL code.
+										document.getElementById("sql-code").contentEditable = "false";
+									  
+										// Align the entire script to the left side.
+										document.getElementById("sql-code").style.textAlign = "left";
+									  </script>
+									   </a><br />
+									<p>This is the code used on MSSQL to retrieve data from the tables in the created Database "BikeStores". Once retrieved, the data was uploaded into Excel to ensure it was clean.</p>
+									<a href="images/Excel.png" class="image fit"><img src="images/Excel.png" alt="" /><div class="caption" style="text-align: right;">
+										<p style="font-style: italic; font-size: 10px;">
+										  A Screenshot of the Data in Excel
+										</p>
+									  </div></a>
+									<ul class="actions special">
+										<li><a href="https://github.com/abenztech/BikeStoresProject" class="button">Database Info</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="CanadaCovidTracker.html">Canada COVID-19 Tracker</a>
+										
+									</header>
+									<a href="CanadaCovidTracker.html" class="image fit"><img src="images/covid.jpg" alt="" /></a>
+									<p>The first step in creating a beautiful dashboard is to use charts and graphs to visualize data in a way that is easy to understand. In addition to using charts and graphs to visualize data, I also created sets, calc. fields, and parameters to filter and manipulate data.</p> 
+									<p>By creating sets, calc. fields, and parameters, I was able to give users more control over how they viewed the data in my dashboard. This allows them to explore the data in different ways and to see different perspectives. I also used the mechanics of sheet swapping to create dynamic dashboards that can be updated with new data. Sheet swapping allows you to create multiple versions of a dashboard and to swap between them as needed.</p> 
+									<p>Finally, I designed an interactive dashboard that allows users to explore and analyze data in a meaningful way. The dashboard is easy to use and navigate, and it provides users with a variety of tools to explore the data. For example, users can filter the data, sort the data, and create custom charts and graphs.</p>
+									<ul class="actions special">
+										<li><a href="CanadaCovidTracker.html" class="button">Dashboard</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<h2><a href="BikeStores.html">The Bike Stores<br />
+											Project</a></h2>
+									</header>
+									<a href="BikeStores.html" class="image fit"><img src="images/bikes.jpg" alt="" /></a>
+									<p>I started by writing a script that would generate a data set with fields consistent of the order ID, the Customer city and state, the order date, sales volume, revenue product name, product category, brand name, store name and sales rep. This data set would be the foundation of my dashboard.</p>
+									<p>Once I had the data set, I started to create the dashboard. I used a variety of charts and graphs to visualize the data. I wanted to make sure that the dashboard was easy to understand and that it would provide insights into the various trends happening in the sales volume over the 2016 to 2018 period.</p>
+									<ul class="actions special">
+										<li><a href="BikeStores.html" class="button">Dashboard</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										
+										<h2><a href="HR-Dash.html">HR Analytics<br />
+											Project</a></h2>
+									</header>
+									<a href="HR-Dash.html" class="image fit"><img src="images/HRpic.png" alt="" /></a>
+									<p>Excited to reveal some newly found skills in Tableau. Here we are to the "HR Analytics Dashboard". This dashboard was fun but also challenging. Through this dashboard, an HR department would be able to determine the attrition difference between genders and also age groups. For example, the dashboard could show that women are more likely to leave the company than men, or that employees in their 20s are more likely to leave than employees in their 30s. This information could help the HR department to develop targeted retention strategies.</p>
+										<p>The dashboard also includes visualizations that show the average employee tenure by department, the most common reasons for leaving the company. This information could help the HR department to identify areas for improvement in the workplace, such as providing better training or increasing compensation.</p>
+										<p>Overall, the HR Analytics Dashboard is a valuable tool that can help HR departments to make data-driven decisions about employee retention and workplace improvement.
+										</p>
+									<ul class="actions special">
+										<li><a href="HR-Dash.html" class="button">Dashboard</a></li>
+									</ul>
+								</article>
+								
+							</section>
+
+						<!-- Footer -->
+							
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Irvington, NJ 07011</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a>(973)-870-9826</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a>a.benders120@gmail.com</a></p>
+							
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
